@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-4505718384532292">
+    <title>Has Empatado</title>
+    <script src="../game.js" defer></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../icon.ico">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFXJTECCKQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VFXJTECCKQ');
+    </script>
+</head>
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="result-container">
+                <div class="player-choice">
+                    <h3>Tu</h3>
+                    <img src="../elements/rock.png" alt="Piedra">
+                </div>
+                <div class="result-text">
+                    <h3 class="button" id="tie">HAS EMPATADO</h3>
+                    <video id="modalVideo" width="50%" autoplay loop>
+                        <source src="https://i.giphy.com/DjD2GAA1ZytT6bxIwv.mp4" type="video/mp4">
+                        <track src="subtitles.vtt" kind="subtitles" srclang="es" label="Español">
+                        <track src="descriptions.vtt" kind="descriptions" srclang="es" label="Descripción en Español">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+                <div class="cpu-choice">
+                    <h3>CPU</h3>
+                    <img src="../elements/rock.png" alt="Piedra">
+                </div>
+            </div>
+            <button class="button-style" onclick="backhome()">Inicio</button>
+            <button class="button-style" onclick="irAPaginaNueva()">Jugar de Nuevo</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const jugador = localStorage.getItem('jugador');
+            const pc = localStorage.getItem('pc');
+
+            const jugadorImg = document.querySelector('.player-choice img');
+            const cpuImg = document.querySelector('.cpu-choice img');
+
+            if (jugador == 1) {
+                jugadorImg.src = '../elements/rock.png';
+            } else if (jugador == 2) {
+                jugadorImg.src = '../elements/paper.png';
+            } else if (jugador == 3) {
+                jugadorImg.src = '../elements/Scissors.png';
+            }
+
+            if (pc == 1) {
+                cpuImg.src = '../elements/rock.png';
+            } else if (pc == 2) {
+                cpuImg.src = '../elements/paper.png';
+            } else if (pc == 3) {
+                cpuImg.src = '../elements/Scissors.png';
+            }
+        });
+    </script>
+</body>
+</html>

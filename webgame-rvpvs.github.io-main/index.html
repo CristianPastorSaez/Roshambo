@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-4505718384532292">
+    <meta name="google-adsense-account" content="ca-pub-4505718384532292">
+    <title>Inicio</title>
+    <link async href="https://fonts.googleapis.com/css?family=Warnes" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.ico">
+    <script src="game.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFXJTECCKQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VFXJTECCKQ');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <button class="button-style" class="top-left-button" onclick="contact()">Contacto Creador</button>
+        <button class="button-style" class="top-left-button" onclick="changeUsername()">Cambiar Nombre</button>
+        <h1 class="header">Piedra🪨, papel🧻 o tijera✂️</h1>
+    </div>
+    <div class="body">
+        <h3 class="button" id="start-message">JUGAR AHORA</h3>
+        <div>
+            <button class="central-button" onclick="new_start()" title="Jugar de nuevo" style="border: none; background: none; padding: 0;">
+                <img class="img" src="green-play-button-png.webp" alt="Jugar de nuevo">
+            </button>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            requestFullScreen();
+        };
+        function requestFullScreen() {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+        }
+    </script>
+    <script>
+function askUsername() {
+            let username = localStorage.getItem('username');
+            if (!username) {
+                do {
+                    username = prompt("Tu nombre de usuario (Minimo 3 caracteres, solo letras y números):");
+                } while (!username || username.length < 3 || /[^a-zA-Z0-9]/.test(username));
+                localStorage.setItem('username', username);
+            }
+            return username;
+        }
+
+        function updateUsername(newUsername) {
+            localStorage.setItem('username', newUsername);
+            document.getElementById("welcome-message").textContent = "Bienvenido " + newUsername;
+        }
+
+        window.onload = function() {
+            const username = askUsername();
+            updateUsername(username);
+        }
+
+        function changeUsername() {
+            let newUsername;
+            do {
+                newUsername = prompt('Tu nombre de usuario (Minimo 3 caracteres, solo letras y números):');
+            } while (newUsername && (newUsername.length < 3 || /[^a-zA-Z0-9]/.test(newUsername)));
+            
+            if (newUsername) {
+                updateUsername(newUsername);
+            }
+        }
+    </script>
+</body>
+</html>

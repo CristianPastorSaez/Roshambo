@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, papel o tijera</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.ico">
+    <script src="game.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFXJTECCKQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VFXJTECCKQ');
+    </script>
+    <script>
+        function askUsername() {
+            let username = localStorage.getItem('username');
+            if (!username) {
+                do {
+                    username = prompt("Tu nombre de usuario (Minimo 3 caracteres, solo letras y números):");
+                } while (!username || username.length < 3 || /[^a-zA-Z0-9]/.test(username));
+                localStorage.setItem('username', username);
+            }
+            return username;
+        }
+
+        function updateUsername(newUsername) {
+            localStorage.setItem('username', newUsername);
+            document.getElementById("welcome-message").textContent = "Bienvenido " + newUsername;
+        }
+
+        window.onload = function() {
+            const username = askUsername();
+            updateUsername(username);
+        }
+
+        function changeUsername() {
+            let newUsername;
+            do {
+                newUsername = prompt('Tu nombre de usuario (Minimo 3 caracteres, solo letras y números):');
+            } while (newUsername && (newUsername.length < 3 || /[^a-zA-Z0-9]/.test(newUsername)));
+            
+            if (newUsername) {
+                updateUsername(newUsername);
+            }
+        }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4505718384532292"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="button-style top-left-button" onclick="backhomestart()">Inicio</button>
+        <button class="button-style" class="top-left-button" onclick="contact()">Contacto Creador</button>
+        <button class="button-style top-left-button" onclick="changeUsername()">Cambiar Nombre</button>
+
+        <h1 class="header">Piedra🪨, papel🧻 o tijera✂️</h1>
+    </div>
+    <div class="body">
+        <h3 class="button" id="welcome-message">Bienvenido</h3>
+    </div>
+    <div class="align_central">
+        <section>
+            <button onclick="rock_selected()" title="Piedra" style="border: none; background: none; padding: 0;"><img src="elements/rock.png" alt="Piedra"></button>
+            <button onclick="paper_selected()" title="Papel" style="border: none; background: none; padding: 0;"><img src="elements/paper.png" alt="Papel"></button>
+            <button onclick="scissors_selected()" title="Tijeras" style="border: none; background: none; padding: 0;"><img src="elements/Scissors.png" alt="Tijeras"></button>
+        </section>
+    </div>
+</body>
+</html>
