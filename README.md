@@ -23,28 +23,4 @@ Este es un sencillo juego web de "Piedra, Papel o Tijera" desarrollado en HTML, 
 3. Haz clic en el botón de jugar y selecciona tu jugada.
 4. ¡Diviértete!
 
-## Cómo subir a GitHub
-1. Inicializa el repositorio (si no lo has hecho):
-   ```sh
-   git init
-   ```
-2. Agrega los archivos:
-   ```sh
-   git add .
-   ```
-3. Haz un commit:
-   ```sh
-   git commit -m "Primer commit"
-   ```
-4. Agrega el repositorio remoto:
-   ```sh
-   git remote add origin https://github.com/CristianPastorSaez/Roshambo.git
-   ```
-5. Sube los archivos:
-   ```sh
-   git push -u origin master
-   ```
-
----
-
 ¡Gracias por jugar! Si tienes sugerencias o encuentras algún error, no dudes en contactar al creador desde la propia web.
