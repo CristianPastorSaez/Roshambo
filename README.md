@@ -8,6 +8,7 @@ Este es un sencillo juego web de "Piedra, Papel o Tijera" desarrollado en HTML, 
 - Botón para reiniciar la partida.
 - Diseño visual atractivo.
 - Compatible con dispositivos móviles y de escritorio.
+- No Responsivo
 
 ## Archivos principales
 - `index.html`: Página principal del juego.
@@ -24,3 +25,5 @@ Este es un sencillo juego web de "Piedra, Papel o Tijera" desarrollado en HTML, 
 4. ¡Diviértete!
 
 ¡Gracias por jugar! Si tienes sugerencias o encuentras algún error, no dudes en contactar al creador desde la propia web.
+
+Fue mi primer desarrollo en el mundo web, a medida que ha pasado el tiempo he ido desarrollando y mejorando mis habilidades, este fue un resultado del inicio que me dio el impulso a comenzar.
